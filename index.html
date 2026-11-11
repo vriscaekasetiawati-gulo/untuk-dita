@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <title>This Is For You ♡</title>
+
+  <!-- Font Poppins dari Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 1. BACKGROUND HYPERSPEED (digambar sama hyperspeed.js) -->
+  <canvas id="bg"></canvas>
+  <div id="tirai"></div>
+
+  <!-- 2. DUA FOTO DI KIRI & KANAN LOVE -->
+  <figure class="foto" id="foto1">
+    <div class="bingkai"><img alt="foto 1"><span class="label">FOTO 1</span></div>
+  </figure>
+  <figure class="foto" id="foto2">
+    <div class="bingkai"><img alt="foto 2"><span class="label">FOTO 2</span></div>
+  </figure>
+
+  <!-- 3. LOVE BENANG + KEMBANG API (digambar sama love.js) -->
+  <canvas id="love"></canvas>
+
+  <!-- 4. LIRIK -->
+  <div id="lirik"></div>
+
+  <!-- 5. PENUTUP (muncul pas lagu selesai) -->
+  <div id="penutup">
+    <p id="teksPenutup"></p>
+    <button id="ulang" type="button">↻ putar lagi</button>
+  </div>
+
+  <!-- 6. INTRO "LOGIN" — harus di-tap dulu baru masuk -->
+  <section id="intro">
+    <div class="kartu">
+      <div class="gembok">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path class="kait tutup" d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7"/>
+          <path class="kait buka" d="M8 10.5V7.8a4 4 0 0 1 7.7-1.6"/>
+          <rect x="5" y="10.5" width="14" height="10" rx="2.6"/>
+          <circle cx="12" cy="15.5" r="1.3"/>
+        </svg>
+      </div>
+      <h1 id="judul">HALLO DITA SAYANG</h1>
+      <p id="subjudul">THIS IS FOR YOU</p>
+      <button id="tombol" type="button" aria-label="tap untuk memuat">
+        <span class="cincin"></span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5S3 14.8 3 8.9C3 6 5.2 4 7.7 4c1.8 0 3.3 1 4.3 2.5C13 5 14.5 4 16.3 4 18.8 4 21 6 21 8.9c0 5.9-9 11.6-9 11.6z"/></svg>
+      </button>
+      <p id="status">tap untuk memuat</p>
+    </div>
+    <p id="hint">🔊 nyalain suaranya ya</p>
+  </section>
+
+  <!-- 7. PANEL MODE SINKRON (cuma muncul kalau modeSinkron: true) -->
+  <div id="sinkron" hidden>
+    <b>MODE SINKRON</b>
+    <div class="jam">0.00 dtk</div>
+    <div class="next">Tap layar pas tiap baris lirik mulai</div>
+    <textarea readonly rows="5" placeholder="hasilnya muncul di sini…"></textarea>
+    <button class="salin" type="button">SALIN</button>
+  </div>
+
+  <!-- Pesan error (biar kelihatan di HP kalau ada yang salah) -->
+  <div id="galat" hidden></div>
+
+  <!-- URUTAN SCRIPT PENTING: pengaturan → hyperspeed → love -->
+  <script src="pengaturan.js"></script>
+  <script src="hyperspeed.js"></script>
+  <script src="love.js"></script>
+</body>
+</html>
